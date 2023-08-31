@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: gapp1nginxaks 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gapp1nginxaks
+  template:
+    metadata:
+      labels:
+        app: gapp1nginxaks 
+    spec:
+      containers:
+        - name: gapp1nginxaks 
+          image: azureakscontainer.azurecr.io/gapp1nginxaks
+          ports:
+          - containerPort: 80
