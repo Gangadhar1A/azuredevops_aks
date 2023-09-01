@@ -15,6 +15,7 @@ variables:
   containerRegistry: 'azureakscontainer.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
   tag: '$(Build.BuildId)'
+  imagePullSecret: 'azureakscontainer1363de4f-auth'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
@@ -37,3 +38,5 @@ stages:
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
+    - upload: manifests
+      artifact: manifests      
