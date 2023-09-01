@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: app1-nginx
-          image: azureakscontainer.azurecr.io/gnginx123
+          image: azureakscontainer.azurecr.io/repo123
           ports:
             - containerPort: 80
 ---
